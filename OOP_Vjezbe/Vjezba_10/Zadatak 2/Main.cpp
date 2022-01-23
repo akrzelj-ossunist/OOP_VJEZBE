@@ -9,8 +9,7 @@ void main() {
 	S.pop();
 	S.push(43);
 	S.pop();
-	int r = S.is_empty();
-	if (r == 0)
+	if (!S.is_empty())
 		cout << "Empty" << endl;
 	else
 		cout << "Not empty... " << endl;
