@@ -12,19 +12,21 @@ class Stack {
 public:
 	Stack() {
 		len = 0;
-		stack = new T[100];
-	} 
+		stack = new T[len];
+	}
 	void pop() {
 		if (len == 0)
 			return;
 		len -= 1;
+		stack = (T*)realloc(stack, sizeof(T) * len);
 	};
 	void push(T n) {
 		len += 1;
+		stack = (T*)realloc(stack, sizeof(T) * len);
 		for (int i = 0; i < len; i++)
 			if (i + 1 == len)
 				stack[i] = n;
-				return;
+		return;
 	}
 	int is_empty() {
 		if (len == 0)
@@ -33,9 +35,9 @@ public:
 	~Stack() {
 		for (int i = 0; i < len; i++)
 			cout << stack[i] << ' ';
-		delete[] stack;
+		delete stack;
 	}
 };
 
-#endif // !HEADER_H
+#endif
 
