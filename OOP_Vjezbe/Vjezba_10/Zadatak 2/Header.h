@@ -35,7 +35,7 @@ public:
 	~Stack() {
 		for (int i = 0; i < len; i++)
 			cout << stack[i] << ' ';
-		delete stack;
+		delete[] stack;
 	}
 };
 
